@@ -4,8 +4,9 @@ var fs = require('fs');
 
 var app = express.createServer(express.logger());
 
+/*
 var read = function(){
-    fs.readFile('index.html','utf8' , function(err,data){
+    fs.readFile('./index.html','utf8' , function(err,data){
 	if(err) throw err;
 	var newData = data.toString();
 	//console.log(newData);
@@ -13,18 +14,19 @@ var read = function(){
     });
 };
    
-
+*/
 
 
 
 app.get('/', function(request, response) {
- 
-    response.send(read());
+  
+    var newData = '';
+    fs.readFile('./index.html','utf8',function(err, data){
+	newData = data.toString();
+    });
+
+    response.send(newData);
     //response.send('Hello World2!');
-
- 
-
-
 });
 
 var port = process.env.PORT || 5000;
