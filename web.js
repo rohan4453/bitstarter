@@ -1,5 +1,7 @@
 var express = require('express');
 
+var fs = require('fs'); 
+
 var app = express.createServer(express.logger());
 
 var read = function(){
@@ -9,7 +11,7 @@ var read = function(){
 	//console.log(newData);
 	return newData;
     })
-}
+};
    
 
 
