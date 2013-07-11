@@ -22,11 +22,11 @@ app.get('/', function(request, response) {
   
     var newData = '';
     fs.readFile('./index.html','utf8',function(err, data){
-	newData = data.toString();
+	response.send(data.toString());
     });
 
-    response.send(newData);
-    console.log(newData);
+    //response.send(newData);
+    //console.log(newData);
 
     //response.send('Hello World2!');
 });
