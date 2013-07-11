@@ -1,5 +1,3 @@
-#!/usr/bin/env node
-
 var express = require('express');
 
 var app = express.createServer(express.logger());
@@ -19,7 +17,7 @@ var read = function(){
 
 app.get('/', function(request, response) {
  
-    response.send(test());
+    response.send(read());
     //response.send('Hello World2!');
 
  
