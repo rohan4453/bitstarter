@@ -1,16 +1,16 @@
-var express = require('express');
+BBvar express = require('express');
 
 var fs = require('fs'); 
 
 var app = express.createServer(express.logger());
 
 var read = function(){
-    fs.readFile('index.html', function(err,data){
+    fs.readFileSync('index.html', function(err,data){
 	if(err) throw err;
-	var newData = data.toString()
+	var newData = data.toString();
 	//console.log(newData);
 	return newData;
-    })
+    });
 };
    
 
