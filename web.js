@@ -26,6 +26,8 @@ app.get('/', function(request, response) {
     });
 
     response.send(newData);
+    console.log(newData);
+
     //response.send('Hello World2!');
 });
 
